@@ -1,0 +1,14 @@
+extend layout 
+
+block content 
+    h1=route.PctPlecare
+        u1.list-group 
+            li.list-group-item="Punctul Sosire: "+route.PctSosire
+            li.list-group-item="Mijloc: "+route.Mijloc 
+            li.list-group-item="Ora Plecare: "+route.OraP 
+            li.list-group-item="Durata drum: "+route.Durata 
+            li.list-group-item="Nivel Aglomeratie: "+route.Aglomeratie
+            li.list-group-item="Satisfacite: "+route.Satisfactie 
+        if utilizator && utilizator.idUtil==route.iduserCal
+            a.btn.btn-default(href='/rute/edit/'+route.idCal) Edit
+            a.btn.btn-danger(href='/rute/delete/'+route.idCal) Delete

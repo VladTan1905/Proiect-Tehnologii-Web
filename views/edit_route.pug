@@ -1,0 +1,54 @@
+extends layout
+
+block content 
+    h1 #{title}
+    form(method='POST',action='/rute/edit/'+route.idCal)
+        #form-group 
+            label IdUser:
+            input.form-control(name='iduserCal',type="text",value=utilizator.idUtil,readonly)
+        #form-group 
+            label Plecare:
+            input.form-control(name='PctPlecare',value=route.PctPlecare)
+        #form-group 
+            label Sosire:
+            input.form-control(name='PctSosire',value=route.PctSosire)
+        #form-group
+        input(type="radio", name="Mijloc", value="Autobuz")
+        | Autobuz
+        #form-group
+        input(type="radio", name="Mijloc", value="Metrou")
+        | Metrou
+        #form-group
+        input(type="radio", name="Mijloc", value="Trolebuz")
+        | Trolebuz
+        #form-group 
+            label Ora:
+            input.form-control(name='OraP',value=route.OraP)
+        #form-group 
+            label Durata:
+            input.form-control(name='Durata',value=route.Durata)
+        br
+        p Aglomeratie
+        #form-group
+            input(type="radio", name="Aglomeratie", value="Putin Aglomerat")
+            | Putin Aglomerat
+        #form-group
+            input(type="radio", name="Aglomeratie", value="Aglomerat")
+            | Aglomerat
+        #form-group
+            input(type="radio", name="Aglomeratie", value="Foarte Aglomerat")
+            | Foarte Aglomerat
+        br
+        p Satisfactie
+        #form-group
+            input(type="radio", name="Satisfactie", value="Nesatisfacut")
+            | 😔
+        #form-group
+            input(type="radio", name="Satisfactie", value="Satisfacut")
+            | 😑
+        #form-group
+            input(type="radio", name="Satisfactie", value="Foarte Satisfacut")
+            | 😊
+        #form-group 
+        br
+        input.btn.btn-primary(type="submit",value="Submit")

@@ -1,0 +1,8 @@
+extends layout
+
+block content 
+    h1 #{title}
+    u1.list-group 
+        for Cal in CalList
+            li.list-group-item
+                a(href="/rute/data/"+Cal.idCal)=Cal.PctPlecare + " - " +Cal.PctSosire
